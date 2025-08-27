@@ -72,7 +72,7 @@
   
             <!-- Actions -->
             <div class="hidden md:flex items-center gap-3">
-              <a href="#" class="text-sm font-medium text-white/80 hover:text-white transition">Logga in</a>
+              <a href="login.html" class="text-sm font-medium text-white/80 hover:text-white transition">Logga in</a>
               <a href="#" class="inline-flex items-center gap-2 rounded-full bg-white text-gray-900 px-4 py-2 text-sm font-semibold hover:bg-white/90 transition">
                 Kom igång
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
@@ -99,7 +99,7 @@
               <a href="#" class="px-3 py-2 rounded-lg bg-white/5 ring-1 ring-white/10 text-sm font-medium text-white/80">Metodik</a>
               <a href="#" class="px-3 py-2 rounded-lg bg-white/5 ring-1 ring-white/10 text-sm font-medium text-white/80">Om Oss</a>
               <div class="flex items-center justify-between gap-2 pt-2">
-                <a href="#" class="text-sm font-medium text-white/80">Logga in</a>
+                <a href="login.html" class="text-sm font-medium text-white/80">Logga in</a>
                 <a href="#" class="inline-flex items-center gap-2 rounded-full bg-white text-gray-900 px-4 py-2 text-sm font-semibold hover:bg-white/90 transition">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
                     <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
@@ -972,6 +972,13 @@
       
       // Initialize Lucide icons
       window.addEventListener('DOMContentLoaded', () => {
+        // Add smooth page entry effect
+        document.body.style.opacity = '0';
+        setTimeout(() => {
+          document.body.style.opacity = '1';
+          document.body.style.transition = 'opacity 0.5s ease';
+        }, 100);
+        
         if (window.lucide && typeof lucide.createIcons === 'function') {
           lucide.createIcons();
         }
@@ -1040,6 +1047,18 @@
         };
         
         animatePlatoLogo();
+        
+        // Add smooth page transitions for login links
+        document.querySelectorAll('a[href="login.html"]').forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+              window.location.href = 'login.html';
+            }, 500);
+          });
+        });
       });
     </script>
   

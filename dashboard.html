@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plato - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;600&display=swap">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        
+        .welcome-animation {
+            animation: slideInUp 0.8s ease-out;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .logout-button {
+            background: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .logout-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4">
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <div class="card p-6 mb-8 welcome-animation">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-light text-gray-800 mb-2">Välkommen till PLATO</h1>
+                    <p class="text-gray-600">Magma fast för språk - Din personliga språkinlärningsplattform</p>
+                </div>
+                <button onclick="logout()" class="logout-button text-white px-6 py-3 rounded-full font-semibold">
+                    Logga ut
+                </button>
+            </div>
+        </div>
+        
+        <!-- Success Message -->
+        <div class="card p-8 mb-8 welcome-animation text-center" style="animation-delay: 0.2s;">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Inloggning lyckades!</h2>
+            <p class="text-gray-600 mb-6">Du är nu inloggad på Plato-plattformen. Här kan du börja din språkinlärningsresa.</p>
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <p class="text-blue-800 text-sm">
+                    🚀 <strong>Nästa steg:</strong> Välj ditt språk och börja med din första lektion!
+                </p>
+            </div>
+        </div>
+        
+        <!-- Quick Actions -->
+        <div class="grid md:grid-cols-3 gap-6 welcome-animation" style="animation-delay: 0.4s;">
+            <div class="card p-6 text-center hover:shadow-xl transition-all duration-300">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C20.832 18.477 19.246 18 17.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Mina Lektioner</h3>
+                <p class="text-gray-600 text-sm">Fortsätt där du slutade</p>
+            </div>
+            
+            <div class="card p-6 text-center hover:shadow-xl transition-all duration-300">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Framsteg</h3>
+                <p class="text-gray-600 text-sm">Se din utveckling</p>
+            </div>
+            
+            <div class="card p-6 text-center hover:shadow-xl transition-all duration-300">
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Grupper</h3>
+                <p class="text-gray-600 text-sm">Lär tillsammans</p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="text-center mt-12 welcome-animation" style="animation-delay: 0.6s;">
+            <p class="text-white/80 text-sm">
+                Plato © 2024 - AI-driven språkundervisning för svenska skolor
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        // Add smooth page entry effect
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+                document.body.style.transition = 'opacity 0.5s ease';
+            }, 100);
+        });
+
+        function logout() {
+            if (confirm('Är du säker på att du vill logga ut?')) {
+                // Add smooth fade-out effect before redirecting
+                document.body.style.opacity = '0';
+                document.body.style.transition = 'opacity 0.5s ease';
+                
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 500);
+            }
+        }
+        
+        // Lägg till hover-effekter
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
