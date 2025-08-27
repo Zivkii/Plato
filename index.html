@@ -1,0 +1,1047 @@
+<html lang="sv"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Plato — Den intelligenta språkinlärningsplattformen för lärare och elever</title>
+    <meta name="description" content="Plato är den intelligenta språkinlärningsplattformen som revolutionerar undervisning och inlärning. Skapad för både lärare och elever.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    
+    
+    
+    <style>
+      @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradientShift 15s ease infinite;
+      }
+      .font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }
+      .font-geist { font-family: 'Geist Mono', monospace !important; }
+      .font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }
+    </style>
+  </head>
+  <body class="min-h-screen antialiased text-white bg-[#0B0F12] font-jakarta">
+    <header class="relative">
+      <div class="absolute inset-0">
+        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/7aa3f483-3978-4416-8322-fa9964864dcb_3840w.jpg" alt="Abstrakt bakgrund som visar språkinlärning" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/90"></div>
+      </div>
+  
+      <nav class="relative z-10">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex h-20 items-center justify-between">
+            <!-- Brand -->
+            <a href="#" class="flex items-center gap-2">
+              <span id="animated-logo" class="inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/15 ring-1 ring-white/20 backdrop-blur overflow-hidden">
+                <div id="plato-philosopher" class="w-9 h-9 relative">
+                  <!-- Animated Plato philosopher silhouette -->
+                  <svg viewBox="0 0 100 100" width="36" height="36" xmlns="http://www.w3.org/2000/svg" class="text-white" style="filter: drop-shadow(rgba(222, 222, 222, 0.435) 0px 0px 2.6063px);">
+                    <!-- Head outline -->
+                    <path d="M50 10 C30 10, 25 35, 30 55 C31 60, 35 65, 50 65 C65 65, 69 60, 70 55 C75 35, 70 10, 50 10" fill="none" stroke="currentColor" stroke-width="2.5" class="plato-head" data-svg-origin="49.99999809265137 65" transform="matrix(0.99892,0.04641,-0.04641,0.99892,3.07065,-2.2503)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px;"></path>
+                    <!-- Beard -->
+                    <path d="M33 50 C40 62.5462, 60 62.5462, 67 50 L67 65 C60 75.5462, 40 75.5462, 33 65 Z" fill="none" stroke="currentColor" stroke-width="2" class="plato-beard"></path>
+                    <!-- Hair/laurel wreath -->
+                    <path d="M30 25 C35 20, 45 15, 50 15 C55 15, 65 20, 70 25" fill="none" stroke="currentColor" stroke-width="2" class="plato-hair"></path>
+                    <path d="M25 28 C30 23, 32 21, 35 20" fill="none" stroke="currentColor" stroke-width="1.5" class="plato-laurel-1" data-svg-origin="30 24" transform="matrix(0.99633,0.08563,-0.08563,0.99633,2.16522,-2.48082)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px;"></path>
+                    <path d="M75 28 C70 23, 68 21, 65 20" fill="none" stroke="currentColor" stroke-width="1.5" class="plato-laurel-2" data-svg-origin="70 24" transform="matrix(0.99633,0.08563,-0.08563,0.99633,2.31202,-5.90602)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px;"></path>
+                    <!-- Eyes -->
+                    <ellipse cx="40" cy="35" rx="3" ry="2" fill="currentColor" class="plato-eye-left" data-svg-origin="37 32.99999464835898" transform="matrix(1,0,0,0.7795,0,7.2765)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px;"></ellipse>
+                    <ellipse cx="60" cy="35" rx="3" ry="2" fill="currentColor" class="plato-eye-right" data-svg-origin="57 32.99999464835898" transform="matrix(1,0,0,0.7795,0,7.2765)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px;"></ellipse>
+                    <!-- Nose -->
+                    <path d="M50 35 L50 45" fill="none" stroke="currentColor" stroke-width="1.5" class="plato-nose"></path>
+                    <!-- Mouth -->
+                    <path d="M42.823 52 C46 53.823, 54 53.823, 57.177 52" fill="none" stroke="currentColor" stroke-width="1.5" class="plato-mouth"></path>
+                  </svg>
+                </div>
+              </span>
+              <span class="uppercase text-lg font-semibold tracking-tighter font-bricolage">Plato</span>
+            </a>
+  
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-3">
+              <a href="#" class="px-3 py-2 rounded-full bg-white/5 ring-1 ring-white/15 text-sm font-medium text-white/90 hover:bg-white/10 transition">Lärare</a>
+              <a href="#" class="px-3 py-2 rounded-full bg-white/5 ring-1 ring-white/15 text-sm font-medium text-white/70 hover:text-white/90 hover:bg-white/10 transition">Elever</a>
+              <a href="#" class="px-3 py-2 rounded-full bg-white/5 ring-1 ring-white/15 text-sm font-medium text-white/70 hover:text-white/90 hover:bg-white/10 transition">Metodik</a>
+              <a href="#" class="px-3 py-2 rounded-full bg-white/5 ring-1 ring-white/15 text-sm font-medium text-white/70 hover:text-white/90 hover:bg-white/10 transition">Om Oss</a>
+            </div>
+  
+            <!-- Actions -->
+            <div class="hidden md:flex items-center gap-3">
+              <a href="#" class="text-sm font-medium text-white/80 hover:text-white transition">Logga in</a>
+              <a href="#" class="inline-flex items-center gap-2 rounded-full bg-white text-gray-900 px-4 py-2 text-sm font-semibold hover:bg-white/90 transition">
+                Kom igång
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                  <path d="m9 18 6-6-6-6"></path>
+                </svg>
+              </a>
+            </div>
+  
+            <!-- Mobile menu button -->
+            <button id="menuBtn" class="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15 hover:bg-white/15 transition" aria-label="Öppna meny">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-white/90">
+                <path d="M4 12h16"></path>
+                <path d="M4 18h16"></path>
+                <path d="M4 6h16"></path>
+              </svg>
+            </button>
+          </div>
+  
+          <!-- Mobile Nav Panel -->
+          <div id="mobileNav" class="md:hidden hidden border-t border-white/10 mt-2 pt-2 pb-3">
+            <div class="grid gap-2">
+              <a href="#" class="px-3 py-2 rounded-lg bg-white/5 ring-1 ring-white/10 text-sm font-medium text-white/90">Lärare</a>
+              <a href="#" class="px-3 py-2 rounded-lg bg-white/5 ring-1 ring-white/10 text-sm font-medium text-white/80">Elever</a>
+              <a href="#" class="px-3 py-2 rounded-lg bg-white/5 ring-1 ring-white/10 text-sm font-medium text-white/80">Metodik</a>
+              <a href="#" class="px-3 py-2 rounded-lg bg-white/5 ring-1 ring-white/10 text-sm font-medium text-white/80">Om Oss</a>
+              <div class="flex items-center justify-between gap-2 pt-2">
+                <a href="#" class="text-sm font-medium text-white/80">Logga in</a>
+                <a href="#" class="inline-flex items-center gap-2 rounded-full bg-white text-gray-900 px-4 py-2 text-sm font-semibold hover:bg-white/90 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                    <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
+                  </svg>
+                  Kom igång
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+  
+      <!-- Hero -->
+      <section class="relative z-10">
+        <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 lg:pt-28 pb-24 lg:pb-40 text-center">
+          <div class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 ring-1 ring-white/20 backdrop-blur">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-white/80">
+              <path d="m21.6 6.6-10.1-4.7c-.3-.1-.7-.1-1 0L.4 6.6c-.5.2-.5.9 0 1.1l10.1 4.7c.3.1.7.1 1 0l10.1-4.7c.5-.2.5-.9 0-1.1z" class=""></path>
+              <path d="M3.2 10.4v7.3c0 .9.7 1.7 1.4 1.9l6.8 2c.2.1.3.1.5.1.2 0 .3 0 .5-.1l6.8-2c.7-.2 1.4-1 1.4-1.9v-7.3"></path>
+              <path d="M16.5 7.8v7.2c0 .3-.1.6-.3.8-.2.1-.4.2-.6.2h-1.2c-.2 0-.4-.1-.6-.2-.2-.2-.3-.5-.3-.8V8.6"></path>
+            </svg>
+            <span class="text-xs font-medium text-white/90">För både lärare och elever</span>
+          </div>
+  
+          <h1 class="mt-6 text-4xl sm:text-5xl lg:text-7xl text-white font-light tracking-tighter">
+            Intelligent <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-pink-300 to-indigo-300 animate-gradient font-medium">språkinlärning.</span>
+          </h1>
+          <p class="max-w-3xl sm:text-lg text-base text-white/80 mt-6 mr-auto ml-auto">Minskad arbetsbörda för lärare och stärkt lärande för elever. Skapa interaktiva 
+            övningar och generera personliga inlärningsvägar i en gemensam, intelligent plattform.</p>
+  
+          <div class="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+            <a href="#" class="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-500/20 hover:bg-blue-500/30 ring-1 ring-blue-300/30 hover:ring-blue-300/50 backdrop-blur text-white px-8 py-4 text-base font-medium transition-all duration-300 hover:scale-105 group">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-blue-300 group-hover:translate-x-0.5 transition-transform">
+                <path d="M18 10.5V6.5a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3v1"></path>
+                <path d="M18 8.5v7.95a2.6 2.6 0 0 1-2.295 2.547L8 20.5"></path>
+                <path d="M8 16.5v-7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1Z"></path>
+                <path d="M12 12v2"></path>
+                <circle cx="12" cy="9.5" r=".5"></circle>
+              </svg>
+              Lärare
+            </a>
+            <a href="#" class="inline-flex items-center justify-center gap-2 rounded-xl bg-purple-500/20 hover:bg-purple-500/30 ring-1 ring-purple-300/30 hover:ring-purple-300/50 backdrop-blur text-white px-8 py-4 text-base font-medium transition-all duration-300 hover:scale-105 group">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-purple-300 group-hover:translate-x-0.5 transition-transform">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              Elever
+            </a>
+          </div>
+  
+          <div class="mt-12 flex items-center justify-center gap-2 text-xs text-white/60">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" style="width: 12px; height: 12px; color: rgb(255, 255, 255);">
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <span class="uppercase tracking-wider">Integritetsfokuserad</span>
+          </div>
+        </div>
+      </section>
+    </header>
+  
+    <!-- Small feature blips -->
+    <section class="relative z-10 -mt-12 -top-20 pb-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-4 backdrop-blur hover:bg-white/10 transition duration-300 hover:ring-white/20 hover:scale-[1.02]">
+            <div class="flex gap-3 items-start">
+              <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 ring-1 ring-white/15">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-white/90">
+                  <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
+                </svg>
+              </span>
+              <div class="">
+                <p class="text-sm font-semibold tracking-tight">AI-genererat innehåll</p>
+                <p class="text-xs text-white/70">Smarta övningar som matchar både lärare och elevers behov.</p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-4 backdrop-blur hover:bg-white/10 transition duration-300 hover:ring-white/20 hover:scale-[1.02]">
+            <div class="flex gap-3 items-start">
+              <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 ring-1 ring-white/15">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-white/90">
+                  <path d="M12 6v6l4 2"></path>
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+              </span>
+              <div class="">
+                <p class="text-sm font-semibold tracking-tight">Realtidsfeedback</p>
+                <p class="text-xs text-white/70">Omedelbar anpassning till inlärningsframsteg.</p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-4 backdrop-blur hover:bg-white/10 transition duration-300 hover:ring-white/20 hover:scale-[1.02]">
+            <div class="flex gap-3 items-start">
+              <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 ring-1 ring-white/15">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-white/90">
+                  <path d="M17 18a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v9z"></path>
+                  <path d="m13 2-2 2-2-2"></path>
+                  <path d="M5 13H2a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h3"></path>
+                  <path d="M19 13h3a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-3"></path>
+                  <path d="M12 22v-4"></path>
+                </svg>
+              </span>
+              <div class="">
+                <p class="text-sm font-semibold tracking-tight">Gemensam plattform</p>
+                <p class="text-xs text-white/70">En sömlös miljö för både lärare och elever.</p>
+              </div>
+            </div>
+          </div>
+          <div class="ring-1 ring-white/10 bg-white/5 rounded-2xl pt-4 pr-4 pb-4 pl-4 backdrop-blur hover:bg-white/10 transition duration-300 hover:ring-white/20 hover:scale-[1.02]">
+            <div class="flex gap-3 items-start">
+              <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 ring-1 ring-white/15">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-white/90">
+                  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+              </span>
+              <div class="">
+                <p class="text-sm font-semibold tracking-tight">Integritetsskydd</p>
+                <p class="text-xs text-white/70">Elevdata förblir säker och skyddad.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="sm:p-8 bg-gradient-to-br from-[#0F1215] via-[#121A24] to-[#161A20] ring-1 ring-white/10 backdrop-blur rounded-3xl mx-8 pt-6 pr-6 pb-6 pl-6">
+      <div class="flex items-center gap-2 text-sm text-white/70">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+          <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
+          <path d="M16 2v5"></path>
+          <path d="M8 2v5"></path>
+          <path d="M2 12h20"></path>
+        </svg>
+        <span class="font-normal">Intelligent språkinlärning</span>
+      </div>
+      <div class="mt-2">
+        <h2 class="text-[44px] sm:text-6xl lg:text-7xl xl:text-8xl leading-[0.9] font-medium text-white tracking-tighter">Tillsammans når vi <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-purple-300 to-indigo-300 animate-gradient">längre.</span></h2>
+        <p class="mt-4 text-sm sm:text-base text-white/70 font-normal">En plattform som förenar lärare och elever i samma intelligenta inlärningsmiljö</p>
+      </div>
+  
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+        <!-- Lärare card -->
+        <article class="sm:p-6 flex flex-col min-h-[420px] bg-white/10 ring-1 ring-white/15 backdrop-blur rounded-2xl pt-5 pr-5 pb-5 pl-5 justify-between hover:bg-white/15 transition duration-300 hover:ring-white/25 hover:scale-[1.02]">
+          <div class="space-y-5">
+            <div class="flex items-center gap-3">
+              <div class="h-12 w-12 rounded-full bg-white/20 ring-1 ring-white/25 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-white/90">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-white tracking-tight">Lärare</h3>
+                <p class="text-xs text-white/60 uppercase tracking-wider">Skapa &amp; anpassa</p>
+              </div>
+            </div>
+            <p class="text-sm text-white/80">Effektivisera ditt arbete genom att skapa engagerande och personanpassade övningar och lektioner på sekunder med AI-assistans.</p>
+            <div class="flex items-center gap-2 text-white/60">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                  <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+              </svg>
+              <span class="text-xs">Spåra elevframsteg</span>
+            </div>
+          </div>
+          <div class="mt-6 space-y-3">
+            <div class="flex items-center gap-2 text-white/80 bg-white/10 rounded-lg p-2 text-xs">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-blue-300">
+                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              Skapa anpassade lektioner
+            </div>
+            <div class="flex items-center gap-2 text-white/80 bg-white/10 rounded-lg p-2 text-xs">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-blue-300">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+              Analysera inlärningsframsteg
+            </div>
+          </div>
+        </article>
+  
+        <!-- Elever card -->
+        <article class="sm:p-6 flex flex-col min-h-[420px] bg-white/10 ring-1 ring-white/15 backdrop-blur rounded-2xl pt-5 pr-5 pb-5 pl-5 justify-between hover:bg-white/15 transition duration-300 hover:ring-white/25 hover:scale-[1.02]">
+          <div class="space-y-5">
+            <div class="flex items-center gap-3">
+              <div class="h-12 w-12 rounded-full bg-white/20 ring-1 ring-white/25 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-white/90">
+                  <path d="M18 10.5V6.5a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3v1"></path>
+                  <path d="M18 8.5v7.95a2.6 2.6 0 0 1-2.295 2.547L8 20.5"></path>
+                  <path d="M8 16.5v-7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1Z"></path>
+                  <path d="M12 12v2"></path>
+                  <circle cx="12" cy="9.5" r=".5"></circle>
+                </svg>
+              </div>
+              <div class="">
+                <h3 class="text-lg font-semibold text-white tracking-tight">Elever</h3>
+                <p class="text-xs text-white/60 uppercase tracking-wider">Lär interaktivt</p>
+              </div>
+            </div>
+            <p class="text-sm text-white/80">Lär dig språk genom interaktiva övningar som automatiskt anpassar sig till din kunskapsnivå och ger omedelbar feedback på dina framsteg.</p>
+            <div class="flex items-center gap-2">
+              <div class="flex -space-x-1">
+                <div class="h-6 w-6 rounded-full bg-white/20 ring-2 ring-white/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 text-white/70">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 6v6l4 2"></path>
+                  </svg>
+                </div>
+                <div class="h-6 w-6 rounded-full bg-white/20 ring-2 ring-white/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 text-white/70">
+                    <path d="m5 3 4 9-9-2"></path>
+                    <path d="M19 3v9"></path>
+                    <path d="M15 7h8"></path>
+                    <path d="M5 21v-9"></path>
+                    <path d="M9 17H1"></path>
+                  </svg>
+                </div>
+                <div class="h-6 w-6 rounded-full bg-white/20 ring-2 ring-white/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 text-white/70">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                </div>
+              </div>
+              <span class="text-xs text-white/60">Personligt anpassat</span>
+            </div>
+          </div>
+          <div class="mt-6 space-y-3">
+            <div class="flex items-center gap-2 text-white/80 bg-white/10 rounded-lg p-2 text-xs">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-purple-300">
+                <path d="M5.8 11.3a2.4 2.4 0 0 0-.8 1V8a2 2 0 0 1 2-2h2"></path>
+                <path d="M8 20H6a2 2 0 0 1-2-2v-1.5a2.5 2.5 0 0 1 2.2-2.5"></path>
+                <path d="M8 15.2A2.4 2.4 0 0 0 7.2 14"></path>
+                <path d="M4 2.5h16l-4 8"></path>
+                <circle cx="9" cy="14" r="1"></circle>
+                <path d="m21 7-9 12-6-8"></path>
+                <path d="m21 3-9 12-6-8"></path>
+              </svg>
+              Interaktiva språkspel
+            </div>
+            <div class="flex items-center gap-2 text-white/80 bg-white/10 rounded-lg p-2 text-xs">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-purple-300">
+                <path d="M12 8V4H8"></path>
+                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                <path d="m16 16-4-4 4-4"></path>
+              </svg>
+              Omedelbar feedback
+            </div>
+          </div>
+        </article>
+  
+        <!-- Skapa card -->
+        <article class="sm:p-6 flex flex-col min-h-[420px] bg-white/10 ring-1 ring-white/15 backdrop-blur rounded-2xl pt-5 pr-5 pb-5 pl-5 justify-between hover:bg-white/15 transition duration-300 hover:ring-white/25 hover:scale-[1.02]">
+          <div class="space-y-5">
+            <div class="flex items-center gap-3">
+              <div class="h-12 w-12 rounded-full bg-white/20 ring-1 ring-white/25 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-white/90">
+                  <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
+                </svg>
+              </div>
+              <div class="">
+                <h3 class="text-lg font-semibold text-white tracking-tight">Skapa</h3>
+                <p class="text-xs text-white/60 uppercase tracking-wider">Anpassat innehåll</p>
+              </div>
+            </div>
+            <p class="text-sm text-white/80">Lärare kan generera övningar, lektioner och kursmaterial som automatiskt anpassas till elevers individuella kunskapsnivåer och inlärningsstilar.</p>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2 text-white/80">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-green-300">
+                  <path d="m9 11-5 5 5 5"></path>
+                  <path d="m20 21-5-10-5 10"></path>
+                  <path d="M4 21v-7"></path>
+                  <path d="M15 11V3h4l1 4-1 4Z"></path>
+                </svg>
+                <span class="text-xs">Multimodalt innehåll</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 space-y-3">
+            <div class="flex items-center gap-2 text-white/80 bg-white/10 rounded-lg p-2 text-xs">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-indigo-300">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+              </svg>
+              Engagerande aktiviteter
+            </div>
+            <div class="flex items-center gap-2 text-white/80 bg-white/10 rounded-lg p-2 text-xs">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-indigo-300">
+                <path d="m8 6 4 6 4-6"></path>
+                <path d="m16 6 4 6 4-6"></path>
+                <path d="M8 18h8"></path>
+                <path d="M12 12v6"></path>
+                <path d="M4 12h16"></path>
+                <path d="M2 18h20"></path>
+              </svg>
+              Anpassad till varje elev
+            </div>
+          </div>
+        </article>
+  
+        <!-- Analysera card -->
+        <article class="sm:p-6 flex flex-col min-h-[420px] bg-white/10 ring-1 ring-white/15 backdrop-blur rounded-2xl pt-5 pr-5 pb-5 pl-5 justify-between hover:bg-white/15 transition duration-300 hover:ring-white/25 hover:scale-[1.02]">
+          <div class="space-y-5">
+            <div class="flex items-center gap-3">
+              <div class="h-12 w-12 rounded-full bg-white/20 ring-1 ring-white/25 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-white/90">
+                  <path d="m2 11 7.09-7.09a2 2 0 0 1 2.82 0L19 11"></path>
+                  <path d="m4 13 5.09-5.09a2 2 0 0 1 2.82 0L20 16"></path>
+                  <path d="M10 2v7.8"></path>
+                  <path d="M14 16v-5.8"></path>
+                </svg>
+              </div>
+              <div class="">
+                <h3 class="text-lg font-semibold text-white tracking-tight">Analysera</h3>
+                <p class="text-xs text-white/60 uppercase tracking-wider">Datadrivna insikter</p>
+              </div>
+            </div>
+            <p class="text-sm text-white/80">Få djupgående insikter om elevernas framsteg och utmaningar. Identifiera mönster, styrkor och utvecklingsområden för att optimera inlärningen.</p>
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 ring-1 ring-white/15">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 text-white/70">
+                <path d="M2 20h20"></path>
+                <path d="M5 20V8.2a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V20"></path>
+                <path d="M13 20V4.2a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V20"></path>
+              </svg>
+              <span class="text-xs text-white/70">Framstegsvisualiseringar</span>
+            </div>
+          </div>
+          <div class="mt-6 space-y-3">
+            <div class="flex items-center gap-2 text-white/80 bg-white/10 rounded-lg p-2 text-xs">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-amber-300">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              Realtidsövervakning
+            </div>
+            <div class="flex items-center gap-2 text-white/80 bg-white/10 rounded-lg p-2 text-xs">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-amber-300">
+                <path d="M22 7 12 13 2 7"></path>
+                <path d="M12 13v8"></path>
+                <path d="m2 17 10 6 10-6"></path>
+                <path d="m2 7 10 6 10-6"></path>
+                <path d="M12 3v10"></path>
+              </svg>
+              Intelligent utvärdering
+            </div>
+          </div>
+        </article>
+      </div>
+  
+      <div class="mt-12 text-center">
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="#" class="inline-flex items-center gap-2 rounded-full bg-white text-neutral-900 px-6 py-3 text-sm font-semibold hover:bg-white/90 transition group hover:scale-105 hover:shadow-lg hover:shadow-blue-500/10 duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 group-hover:translate-x-0.5 transition-transform">
+              <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path>
+            </svg>
+            Lärare
+          </a>
+          <a href="#" class="inline-flex items-center gap-2 rounded-full bg-white/5 ring-1 ring-white/15 backdrop-blur text-white px-6 py-3 text-sm font-semibold hover:bg-white/10 transition group hover:scale-105 hover:shadow-lg hover:shadow-purple-500/10 duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 group-hover:translate-x-0.5 transition-transform">
+              <path d="M9 5v14h6V5z"></path>
+              <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+            </svg>
+            Elever
+          </a>
+        </div>
+      </div>
+    </section>
+  
+    <section id="faq" class="max-w-7xl sm:px-6 sm:mt-20 mr-auto mb-24 ml-auto pr-4 pl-4">
+      <div class="relative overflow-hidden rounded-3xl ring-1 ring-white/10 bg-white/5 backdrop-blur">
+        <div class="relative sm:p-8 pt-6 pr-6 pb-6 pl-6">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+            <!-- Intro -->
+            <div class="md:col-span-5">
+              <h2 class="text-[56px] sm:text-[80px] leading-none font-semibold text-white tracking-tighter">
+                Frågor.</h2>
+              <p class="mt-3 text-sm sm:text-base text-white/80">
+                Hitta svar på vanliga frågor om Plato, vår intelligenta språkinlärningsplattform för både lärare och elever.
+              </p>
+              <a href="#contact" class="mt-5 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium tracking-tight text-white/90 bg-white/10 hover:bg-white/15 ring-1 ring-white/15 backdrop-blur">
+                <span>Kontakta oss</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path>
+                </svg>
+              </a>
+            </div>
+  
+            <!-- Accordion -->
+            <div class="md:col-span-7">
+              <div class="space-y-3">
+                <!-- Item 1 (open) -->
+                <div class="rounded-2xl ring-1 ring-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition-colors duration-300" data-accordion-item="" data-open="true">
+                  <button type="button" class="w-full flex items-center justify-between gap-4 p-5 text-left" aria-expanded="true" data-accordion="faq">
+                    <span class="text-base sm:text-lg font-semibold tracking-tight text-white">Hur gynnar Plato både lärare och elever?</span>
+                    <span class="shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-icon="plus" class="w-5 h-5 text-white/70 hidden">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5v14"></path>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-icon="minus" class="w-5 h-5 text-white/70">
+                        <path d="M5 12h14"></path>
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="px-5 pb-5 text-sm text-white/70" data-qa="a">
+                    Plato skapar en gemensam plattform där lärare får verktyg för att enkelt skapa personliga, AI-genererade lektioner och spåra elevframsteg, medan elever får en anpassad inlärningsupplevelse som utvecklas med deras kunskapsnivå. Kommunikationen mellan lärare och elever förbättras genom realtidsinsikter och återkoppling, vilket skapar en starkare inlärningsgemenskap.
+                  </div>
+                </div>
+  
+                <!-- Item 2 -->
+                <div class="rounded-2xl ring-1 ring-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition-colors duration-300" data-accordion-item="">
+                  <button type="button" class="w-full flex items-center justify-between gap-4 p-5 text-left" aria-expanded="false" data-accordion="faq">
+                    <span class="text-base sm:text-lg font-semibold tracking-tight text-white">Kan jag använda Plato med min befintliga läroplan?</span>
+                    <span class="shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-icon="plus" class="w-5 h-5 text-white/70">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5v14"></path>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-icon="minus" class="w-5 h-5 text-white/70 hidden">
+                        <path d="M5 12h14"></path>
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="px-5 pb-5 text-sm text-white/70 hidden" data-qa="a">
+                    Absolut. Plato är utformad för att komplettera din befintliga läroplan, inte ersätta den. Du kan enkelt ladda upp ditt nuvarande material, och Plato kommer att förbättra det med interaktiva element, generera stödjande övningar och anpassa dem för olika elevnivåer. Denna flexibilitet gör att du kan bibehålla läroplans kontinuitet samtidigt som du drar nytta av Platos intelligenta inlärningsverktyg.
+                  </div>
+                </div>
+  
+                <!-- Item 3 -->
+                <div class="rounded-2xl ring-1 ring-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition-colors duration-300" data-accordion-item="">
+                  <button type="button" class="w-full flex items-center justify-between gap-4 p-5 text-left" aria-expanded="false" data-accordion="faq">
+                    <span class="text-base sm:text-lg font-semibold tracking-tight text-white">Hur förbättrar Plato kommunikationen mellan lärare och elever?</span>
+                    <span class="shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-icon="plus" class="w-5 h-5 text-white/70">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5v14"></path>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-icon="minus" class="w-5 h-5 text-white/70 hidden">
+                        <path d="M5 12h14"></path>
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="px-5 pb-5 text-sm text-white/70 hidden" data-qa="a">
+                    Plato fungerar som en kommunikationsbro genom att ge både lärare och elever insyn i inlärningsprocessen. Lärare kan se exakt var elever fastnar och ge målinriktad hjälp, medan elever kan uttrycka sina inlärningsbehov och få omedelbar återkoppling. Plattformen främjar en kultur av transparent framstegsövervakning, vilket möjliggör mer meningsfulla och konstruktiva diskussioner om språkinlärning.
+                  </div>
+                </div>
+  
+                <!-- Item 4 -->
+                <div class="rounded-2xl ring-1 ring-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition-colors duration-300" data-accordion-item="">
+                  <button type="button" class="w-full flex items-center justify-between gap-4 p-5 text-left" aria-expanded="false" data-accordion="faq">
+                    <span class="text-base sm:text-lg font-semibold tracking-tight text-white">Vilka språk stöder Plato?</span>
+                    <span class="shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-icon="plus" class="w-5 h-5 text-white/70">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5v14"></path>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-icon="minus" class="w-5 h-5 text-white/70 hidden">
+                        <path d="M5 12h14"></path>
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="px-5 pb-5 text-sm text-white/70 hidden" data-qa="a">
+                    Plato stöder för närvarande svenska, engelska, spanska, franska, tyska och italienska, med planer på att lägga till fler språk snart. Varje språkmodul innehåller kulturellt relevant innehåll och accentvariationer för att exponera eleverna för autentisk språkanvändning. Vår uttalsåterkoppling fungerar på alla språk och dialekter som stöds.
+                  </div>
+                </div>
+  
+                <!-- Item 5 -->
+                <div class="rounded-2xl ring-1 ring-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition-colors duration-300" data-accordion-item="">
+                  <button type="button" class="w-full flex items-center justify-between gap-4 p-5 text-left" aria-expanded="false" data-accordion="faq">
+                    <span class="text-base sm:text-lg font-semibold tracking-tight text-white">Hur skiljer sig elevupplevelsen från lärarupplevelsen?</span>
+                    <span class="shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-icon="plus" class="w-5 h-5 text-white/70">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5v14"></path>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-icon="minus" class="w-5 h-5 text-white/70 hidden">
+                        <path d="M5 12h14"></path>
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="px-5 pb-5 text-sm text-white/70 hidden" data-qa="a">
+                    Lärarupplevelsen fokuserar på innehållsskapande, klassöversikt och detaljerade framstegsanalyser för att identifiera var elever behöver hjälp. Elevupplevelsen är mer interaktiv och spelifierad med personliga utmaningar, direktfeedback och visualiserad framstegsspårning. Båda vyerna är sammankopplade, vilket ger en sömlös övergång mellan undervisning och inlärning samtidigt som varje användare får verktyg som är optimerade för deras specifika behov.
+                  </div>
+                </div>
+  
+                <!-- Item 6 -->
+                <div class="rounded-2xl ring-1 ring-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition-colors duration-300" data-accordion-item="">
+                  <button type="button" class="w-full flex items-center justify-between gap-4 p-5 text-left" aria-expanded="false" data-accordion="faq">
+                    <span class="text-base sm:text-lg font-semibold tracking-tight text-white">Vad gör Plato annorlunda från andra språkinlärningsplattformar?</span>
+                    <span class="shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-icon="plus" class="w-5 h-5 text-white/70">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5v14"></path>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-icon="minus" class="w-5 h-5 text-white/70 hidden">
+                        <path d="M5 12h14"></path>
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="px-5 pb-5 text-sm text-white/70 hidden" data-qa="a">
+                    Till skillnad från de flesta plattformar som antingen riktar sig till lärare ELLER elever, förenar Plato båda perspektiven i en gemensam miljö. Vår unika dubbelriktade adaptiva teknik anpassar sig inte bara till elevens framsteg utan också till lärarens undervisningsstil. Detta skapar en sammanhängande språkinlärningsupplevelse där båda sidor får exakt de verktyg de behöver, samtidigt som de förstår varandras perspektiv bättre.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          // Initialize open states
+          document.querySelectorAll('#faq [data-accordion-item]').forEach(item => {
+            const open = item.hasAttribute('data-open');
+            const btn = item.querySelector('[data-accordion="faq"]');
+            const a = item.querySelector('[data-qa="a"]');
+            const plus = item.querySelector('[data-icon="plus"]');
+            const minus = item.querySelector('[data-icon="minus"]');
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            a.classList.toggle('hidden', !open);
+            plus.classList.toggle('hidden', open);
+            minus.classList.toggle('hidden', !open);
+          });
+  
+          // Toggle behavior
+          document.querySelectorAll('#faq [data-accordion="faq"]').forEach(btn => {
+            btn.addEventListener('click', () => {
+              const item = btn.closest('[data-accordion-item]');
+              const content = item.querySelector('[data-qa="a"]');
+              const plus = item.querySelector('[data-icon="plus"]');
+              const minus = item.querySelector('[data-icon="minus"]');
+              const expanded = btn.getAttribute('aria-expanded') === 'true';
+              btn.setAttribute('aria-expanded', String(!expanded));
+              content.classList.toggle('hidden');
+              plus.classList.toggle('hidden');
+              minus.classList.toggle('hidden');
+            });
+          });
+  
+          // Render icons (safe to call multiple times)
+          if (window.lucide && typeof lucide.createIcons === 'function') {
+            lucide.createIcons();
+          }
+        });
+      </script>
+    </section>
+  
+    <section class="w-full mr-auto mb-8 ml-auto">
+      <div class="max-w-7xl sm:px-6 lg:px-8 mr-auto ml-auto pr-4 pl-4">
+        <div class="relative overflow-hidden ring-1 ring-white/10 bg-gradient-to-br from-[#0F1215] via-[#121A24] to-[#161A20] rounded-3xl backdrop-blur">
+          <!-- Decorative elements -->
+          <div class="absolute top-0 right-0 -mt-12 -mr-12 opacity-50">
+            <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="100" fill="url(#paint0_radial)" fill-opacity="0.2"></circle>
+              <defs>
+                
+              </defs>
+            </svg>
+          </div>
+  
+          <!-- Content -->
+          <div class="relative z-10 md:p-12 lg:p-16 pt-8 pr-8 pb-8 pl-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              <!-- Copy + highlights -->
+              <div class="lg:col-span-7">
+                <div class="flex items-center gap-2 text-sm text-white/70 mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                    <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path>
+                  </svg>
+                  <span class="font-medium">Kontakt</span>
+                </div>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl leading-[1.05] font-semibold text-white tracking-tight">
+                  Låt oss <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-purple-300 to-indigo-300 animate-gradient">prata.</span>
+                </h2>
+                <p class="text-base sm:text-lg max-w-2xl text-white/80 mt-4">
+                  Oavsett om du är lärare, elev eller administratör, hör av dig med dina frågor om Plato. Vi svarar inom en arbetsdag.
+                </p>
+  
+                <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div class="flex items-start gap-3">
+                    <div class="h-9 w-9 rounded-lg bg-white/10 backdrop-blur ring-1 ring-white/15 flex items-center justify-center text-white/90">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                        <path d="M12 6v6h4"></path>
+                        <circle cx="12" cy="12" r="10"></circle>
+                      </svg>
+                    </div>
+                    <div class="">
+                      <p class="text-white font-semibold text-sm">Snabbt svar</p>
+                      <p class="text-white/70 text-xs">De flesta meddelanden får svar inom 24 timmar.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="h-9 w-9 rounded-lg bg-white/10 backdrop-blur ring-1 ring-white/15 flex items-center justify-center text-white/90">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                        <path d="m15 9-6 6"></path>
+                        <path d="m9 9 6 6"></path>
+                      </svg>
+                    </div>
+                    <div class="">
+                      <p class="text-white font-semibold text-sm">Tydliga nästa steg</p>
+                      <p class="text-white/70 text-xs">Vi följer upp med en koncis plan och tidslinje.</p>
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- Direct contact card -->
+                <div class="mt-8">
+                  <div class="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur ring-1 ring-white/20 p-3 hover:from-blue-500/30 hover:to-purple-500/30 transition duration-300 hover:ring-white/30">
+                    <div class="h-12 w-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-500 text-white">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                        <path d="M16.8 2h-9.6c-.66 0-1.2 0-1.647.07a3.801 3.801 0 0 0-2.483 2.483C3 5.001 3 5.54 3 6.2v11.6c0 .66 0 1.2.07 1.647a3.801 3.801 0 0 0 2.483 2.483C6.001 22 6.54 22 7.2 22h9.6c.66 0 1.2 0 1.647-.07a3.801 3.801 0 0 0 2.483-2.483C21 19.001 21 18.46 21 17.8V6.2c0-.66 0-1.2-.07-1.647a3.801 3.801 0 0 0-2.483-2.483C18.001 2 17.46 2 16.8 2z"></path>
+                        <path d="M12 10v4"></path>
+                        <path d="M12 18h.01"></path>
+                      </svg>
+                    </div>
+                    <div class="min-w-0">
+                      <p class="text-[11px] text-white/70 leading-none uppercase tracking-wider">Support</p>
+                      <p class="text-white font-semibold tracking-tight truncate">Kontakta Plato-teamet</p>
+                    </div>
+                    <a href="mailto:hej@platolearning.se" class="ml-1 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-2 text-xs font-semibold hover:from-blue-600 hover:to-purple-600 transition-colors">
+                      Kontakta oss
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5">
+                        <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Form card -->
+              <div class="lg:col-span-5">
+                <div class="rounded-2xl bg-white/95 backdrop-blur ring-1 ring-white/20 shadow-lg p-8 hover:shadow-xl transition duration-300">
+                  <div class="flex items-center justify-between">
+                    <div class="">
+                      <p class="text-[11px] text-neutral-500 uppercase tracking-wider">Plato Support</p>
+                      <h3 class="mt-1 text-2xl sm:text-3xl font-semibold tracking-tight text-neutral-900">
+                        Kontakta oss
+                      </h3>
+                    </div>
+                    <div class="h-10 w-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 text-white flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                        <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                    </div>
+                  </div>
+  
+                  <form action="#" method="POST" class="mt-6 space-y-4">
+                    <div class="">
+                      <label for="ct-name" class="block text-xs text-neutral-600">Ditt namn<span class="text-neutral-400"> *</span></label>
+                      <input id="ct-name" name="name" type="text" required="" placeholder="Anna Svensson" class="mt-1 w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-black/10 focus:ring-2 focus:ring-blue-500 outline-none bg-white placeholder:text-neutral-400">
+                    </div>
+                    <div class="">
+                      <label for="ct-email" class="block text-xs text-neutral-600">E-post<span class="text-neutral-400"> *</span></label>
+                      <div class="relative mt-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-neutral-400 absolute left-3 top-1/2 -translate-y-1/2">
+                          <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                          <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                        </svg>
+                        <input id="ct-email" name="email" type="email" required="" placeholder="du@exempel.se" class="w-full pl-9 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-black/10 focus:ring-2 focus:ring-blue-500 outline-none bg-white placeholder:text-neutral-400">
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label for="user-type" class="block text-xs text-neutral-600">Jag är en<span class="text-neutral-400"> *</span></label>
+                        <select id="user-type" name="user-type" required="" class="mt-1 w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-black/10 focus:ring-2 focus:ring-blue-500 outline-none bg-white">
+                          <option value="" disabled="" selected="">Välj</option>
+                          <option value="teacher">Lärare</option>
+                          <option value="student">Elev</option>
+                          <option value="administrator">Administratör</option>
+                          <option value="other">Annan</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label for="interest" class="block text-xs text-neutral-600">Intresserad av</label>
+                        <select id="interest" name="interest" class="mt-1 w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-black/10 focus:ring-2 focus:ring-blue-500 outline-none bg-white">
+                          <option value="" disabled="" selected="">Välj</option>
+                          <option value="demo">Demo</option>
+                          <option value="pricing">Priser</option>
+                          <option value="integration">Integration</option>
+                          <option value="support">Support</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="">
+                      <label for="ct-msg" class="block text-xs text-neutral-600">Meddelande</label>
+                      <textarea id="ct-msg" name="message" rows="4" placeholder="Hur kan vi hjälpa dig?" class="mt-1 w-full resize-y pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-black/10 focus:ring-2 focus:ring-blue-500 outline-none bg-white placeholder:text-neutral-400"></textarea>
+                    </div>
+                    <button type="submit" class="w-full inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-3 text-sm font-semibold hover:from-blue-600 hover:to-purple-600 transition-colors">
+                      Skicka meddelande
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 ml-2">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                      </svg>
+                    </button>
+                    <p class="text-[11px] text-neutral-500">Genom att skicka, godkänner du våra Villkor och Integritetspolicy.</p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <footer class="max-w-7xl mr-auto ml-auto pr-6 pb-12 pl-6">
+      <div class="p-12 lg:p-16 border border-white/10 rounded-3xl bg-white/[0.03] backdrop-blur-2xl">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-16">
+          <div class="lg:col-span-1">
+            <div class="flex items-center mb-6">
+              <span class="inline-flex h-8 w-8 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15 backdrop-blur overflow-hidden">
+                <div class="w-7 h-7 relative">
+                  <!-- Mini Plato philosopher logo -->
+                  <svg viewBox="0 0 100 100" width="28" height="28" xmlns="http://www.w3.org/2000/svg" class="text-white">
+                    <!-- Head outline -->
+                    <path d="M50 10 C30 10, 25 35, 30 55 C31 60, 35 65, 50 65 C65 65, 69 60, 70 55 C75 35, 70 10, 50 10" fill="none" stroke="currentColor" stroke-width="2.5"></path>
+                    <!-- Beard -->
+                    <path d="M33 50 C40 62, 60 62, 67 50 L67 65 C60 75, 40 75, 33 65 Z" fill="none" stroke="currentColor" stroke-width="2"></path>
+                    <!-- Hair/laurel wreath -->
+                    <path d="M30 25 C35 20, 45 15, 50 15 C55 15, 65 20, 70 25" fill="none" stroke="currentColor" stroke-width="2"></path>
+                    <!-- Eyes -->
+                    <ellipse cx="40" cy="35" rx="3" ry="2" fill="currentColor"></ellipse>
+                    <ellipse cx="60" cy="35" rx="3" ry="2" fill="currentColor"></ellipse>
+                    <!-- Nose -->
+                    <path d="M50 35 L50 45" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+                    <!-- Mouth -->
+                    <path d="M43 52 C46 54, 54 54, 57 52" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+                  </svg>
+                </div>
+              </span>
+              <span class="ml-2 uppercase text-lg font-semibold tracking-tighter font-bricolage text-white">Plato</span>
+            </div>
+            <p class="text-sm text-white/60 leading-relaxed mb-8">
+              Intelligent språkinlärning som förenar lärare och elever i samma ekosystem. Upptäck kraften i en gemensam plattform för djupare förståelse och bättre resultat.
+            </p>
+            <div class="flex items-center gap-4">
+              <a href="#" class="w-10 h-10 rounded-xl flex items-center justify-center border border-white/10 hover:border-white/20 transition-all duration-300 hover:bg-white/5 bg-white/[0.03]" aria-label="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-xl flex items-center justify-center border border-white/10 hover:border-white/20 transition-all duration-300 hover:bg-white/5 bg-white/[0.03]" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect width="4" height="12" x="2" y="9"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-xl flex items-center justify-center border border-white/10 hover:border-white/20 transition-all duration-300 hover:bg-white/5 bg-white/[0.03]" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="">
+            <h4 class="text-sm font-medium text-white mb-6 uppercase tracking-wide">Lärare</h4>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="text-sm text-white/60 hover:text-white transition-colors duration-300">AI-övningsskapare</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm text-white/60 hover:text-white transition-colors duration-300">Smart bedömning</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm text-white/60 hover:text-white transition-colors duration-300">Framstegsspårning</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm text-white/60 hover:text-white transition-colors duration-300">Lektionsplanering</a>
+              </li>
+            </ul>
+          </div>
+          <div class="">
+            <h4 class="text-sm font-medium text-white mb-6 uppercase tracking-wide">Elever</h4>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="text-sm text-white/60 hover:text-white transition-colors duration-300">Interaktiv övning</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm text-white/60 hover:text-white transition-colors duration-300">Ordförrådsbyggare</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm text-white/60 hover:text-white transition-colors duration-300">Uttalscoach</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm text-white/60 hover:text-white transition-colors duration-300">Adaptiva utmaningar</a>
+              </li>
+            </ul>
+          </div>
+          <div class="">
+            <h4 class="text-sm font-medium text-white mb-6 uppercase tracking-wide">Support</h4>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="text-sm text-white/60 hover:text-white transition-colors duration-300">Hjälpcenter</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm text-white/60 hover:text-white transition-colors duration-300">Kontakta oss</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm text-white/60 hover:text-white transition-colors duration-300">Lärargemenskapen</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm text-white/60 hover:text-white transition-colors duration-300">Språkresurser</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-white/10 pt-12 mb-12">
+          <div class="max-w-2xl mx-auto text-center">
+            <h4 class="text-lg font-medium text-white mb-4">Håll dig informerad</h4>
+            <p class="text-sm text-white/60 mb-6">Få de senaste nyheterna och uppdateringarna om vår gemensamma språkinlärningsplattform direkt till din inkorg.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <input type="email" placeholder="Ange din e-postadress" class="flex-1 max-w-md px-4 py-3 rounded-xl text-sm text-white placeholder-white/40 border border-white/10 focus:border-blue-500/30 focus:outline-none transition-all duration-300 bg-white/5">
+              <button class="px-8 py-3 rounded-xl text-sm font-medium text-white border border-blue-500/30 hover:border-blue-500/50 transition-all duration-300 bg-gradient-to-r from-blue-500/20 to-purple-500/20 hover:from-blue-500/30 hover:to-purple-500/30">Prenumerera</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex flex-wrap items-center gap-6 text-xs text-white/40">
+          <span>© 2024 Plato Learning. Alla rättigheter förbehållna.</span>
+          <a href="#" class="hover:text-white/60 transition-colors duration-300">Integritetspolicy</a>
+          <a href="#" class="hover:text-white/60 transition-colors duration-300">Användarvillkor</a>
+        </div>
+        <div class="flex items-center gap-4 text-xs text-white/40">
+          <span class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-white/70">
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            Integritetsfokuserad
+          </span>
+          <span class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+            För alla
+          </span>
+        </div>
+      </div>
+    </footer>
+  
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileNav = document.getElementById('mobileNav');
+      if (menuBtn && mobileNav) {
+        let open = false;
+        menuBtn.addEventListener('click', () => {
+          open = !open;
+          mobileNav.classList.toggle('hidden', !open);
+          menuBtn.innerHTML = open
+            ? '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-white/90"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>'
+            : '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-white/90"><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path></svg>';
+        });
+      }
+      
+      // Initialize Lucide icons
+      window.addEventListener('DOMContentLoaded', () => {
+        if (window.lucide && typeof lucide.createIcons === 'function') {
+          lucide.createIcons();
+        }
+        
+        // Animate the Plato philosopher logo
+        const animatePlatoLogo = () => {
+          if (window.gsap) {
+            const logoTimeline = gsap.timeline({repeat: -1, repeatDelay: 3});
+            
+            // Eyes blink
+            logoTimeline.to('.plato-eye-left, .plato-eye-right', {
+              scaleY: 0.1,
+              duration: 0.1,
+              ease: 'power1.inOut',
+              yoyo: true,
+              repeat: 1
+            }, 1);
+            
+            // Slight head tilt
+            logoTimeline.to('.plato-head', {
+              rotation: 3,
+              transformOrigin: 'center bottom',
+              duration: 1,
+              ease: 'power1.inOut',
+              yoyo: true,
+              repeat: 1
+            }, 2);
+            
+            // Mouth movement - thinking
+            logoTimeline.to('.plato-mouth', {
+              attr: {d: 'M42 52 C46 53, 54 53, 58 52'},
+              duration: 0.8,
+              ease: 'power1.inOut',
+              yoyo: true,
+              repeat: 1
+            }, 3);
+            
+            // Laurel wreath slight movement
+            logoTimeline.to('.plato-laurel-1, .plato-laurel-2', {
+              rotation: 5,
+              transformOrigin: 'center center',
+              duration: 1.5,
+              ease: 'sine.inOut',
+              yoyo: true,
+              repeat: 1
+            }, 3.5);
+            
+            // Beard slight movement
+            logoTimeline.to('.plato-beard', {
+              attr: {d: 'M33 50 C40 63, 60 63, 67 50 L67 65 C60 76, 40 76, 33 65 Z'},
+              duration: 1.5,
+              ease: 'power1.inOut',
+              yoyo: true,
+              repeat: 1
+            }, 2.5);
+            
+            // Subtle glow effect
+            logoTimeline.to('#plato-philosopher svg', {
+              filter: 'drop-shadow(0 0 3px rgba(255, 255, 255, 0.5))',
+              duration: 2,
+              ease: 'sine.inOut',
+              yoyo: true,
+              repeat: 1
+            }, 0);
+          }
+        };
+        
+        animatePlatoLogo();
+      });
+    </script>
+  
+  
+  </body></html>
