@@ -7,11 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;600&display=swap">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #0B0F12;
             min-height: 100vh;
         }
         
@@ -21,12 +22,31 @@
             letter-spacing: -0.025em;
         }
         
+        .background-container {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        
+        .background-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .background-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2), rgba(0,0,0,0.8));
+        }
+        
         #particles-js {
             position: absolute;
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
+            z-index: 1;
         }
         
         .beautiful-shadow {
@@ -34,7 +54,7 @@
         }
         
         .plato-gradient {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            background: linear-gradient(135deg, #1e3a2e 0%, #2d5a3d 50%, #4a7c59 100%);
         }
         
         .back-button {
@@ -66,6 +86,11 @@
         .floating {
             animation: float 6s ease-in-out infinite;
         }
+        
+        .main-content {
+            position: relative;
+            z-index: 10;
+        }
     </style>
     <script>
         tailwind.config = {
@@ -82,30 +107,67 @@
         }
     </script>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4">
-    <a href="index.html" class="back-button">← Tillbaka</a>
+<body class="min-h-screen">
+    <!-- Background Container -->
+    <div class="background-container">
+        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/7aa3f483-3978-4416-8322-fa9964864dcb_3840w.jpg" alt="Dawn over distant mountains" class="background-image">
+        <div class="background-overlay"></div>
+        <div id="particles-js"></div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content min-h-screen flex items-center justify-center p-4">
+        <a href="index.html" class="back-button">← Tillbaka</a>
     
     <div class="max-w-4xl w-full bg-white backdrop-blur-lg rounded-2xl overflow-hidden beautiful-shadow border border-white/20 flex flex-col md:flex-row floating">
         <!-- Plato Visualization Column -->
         <div class="md:w-1/2 h-72 md:h-auto relative plato-gradient" id="particles-container">
-            <div id="particles-js"></div>
             <div class="absolute top-6 left-6 z-10">
-                <span class="px-3 py-1 bg-plato-dark/80 rounded-full text-xs text-blue-100 mb-3 inline-block">SPRÅKUNDERVISNING</span>
+                <!-- Plato Logo -->
+                <div class="flex items-center gap-3 mb-4">
+                    <span id="animated-logo-login" class="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/15 ring-1 ring-white/20 backdrop-blur overflow-hidden">
+                        <div id="plato-philosopher-login" class="w-10 h-10 relative">
+                            <svg viewBox="0 0 100 100" width="40" height="40" xmlns="http://www.w3.org/2000/svg" class="text-white" style="filter: drop-shadow(rgba(222, 222, 222, 0.435) 0px 0px 2.6063px);">
+                                <!-- Head outline -->
+                                <path d="M50 10 C30 10, 25 35, 30 55 C31 60, 35 65, 50 65 C65 65, 69 60, 70 55 C75 35, 70 10, 50 10" fill="none" stroke="currentColor" stroke-width="2.5" class="plato-head-login"></path>
+                                <!-- Beard -->
+                                <path d="M33 50 C40 62.5462, 60 62.5462, 67 50 L67 65 C60 75.5462, 40 75.5462, 33 65 Z" fill="none" stroke="currentColor" stroke-width="2" class="plato-beard-login"></path>
+                                <!-- Hair/laurel wreath -->
+                                <path d="M30 25 C35 20, 45 15, 50 15 C55 15, 65 20, 70 25" fill="none" stroke="currentColor" stroke-width="2" class="plato-hair-login"></path>
+                                <path d="M25 28 C30 23, 32 21, 35 20" fill="none" stroke="currentColor" stroke-width="1.5" class="plato-laurel-1-login"></path>
+                                <path d="M75 28 C70 23, 68 21, 65 20" fill="none" stroke="currentColor" stroke-width="1.5" class="plato-laurel-2-login"></path>
+                                <!-- Eyes -->
+                                <ellipse cx="40" cy="35" rx="3" ry="2" fill="currentColor" class="plato-eye-left-login"></ellipse>
+                                <ellipse cx="60" cy="35" rx="3" ry="2" fill="currentColor" class="plato-eye-right-login"></ellipse>
+                                <!-- Nose -->
+                                <path d="M50 35 L50 45" fill="none" stroke="currentColor" stroke-width="1.5" class="plato-nose-login"></path>
+                                <!-- Mouth -->
+                                <path d="M42.823 52 C46 53.823, 54 53.823, 57.177 52" fill="none" stroke="currentColor" stroke-width="1.5" class="plato-mouth-login"></path>
+                            </svg>
+                        </div>
+                    </span>
+                    <div>
+                        <span class="px-3 py-1 bg-green-900/80 rounded-full text-xs text-green-100 inline-block">SPRÅKUNDERVISNING</span>
+                    </div>
+                </div>
                 <h2 class="heading-font text-3xl text-white">Välkommen till</h2>
                 <h2 class="heading-font text-3xl text-white">PLATO</h2>
-                <div class="h-1 w-16 bg-blue-400 mt-3 rounded-full"></div>
-                <p class="text-blue-100 text-sm mt-3 opacity-90">Magma fast för språk</p>
+                <div class="h-1 w-16 bg-green-400 mt-3 rounded-full"></div>
+                <p class="text-green-100 text-sm mt-3 opacity-90">Intelligent språkinlärning</p>
             </div>
-            <div class="absolute bottom-6 left-6 bg-plato-dark/80 backdrop-blur-sm rounded-lg px-4 py-3 z-10 border border-blue-700">
-                <div class="text-xs text-blue-200 mb-1">AI-Driven Learning</div>
-                <div class="heading-font text-lg text-blue-100">Framtiden</div>
+            <div class="absolute bottom-6 left-6 bg-gradient-to-br from-green-800/90 to-emerald-900/90 backdrop-blur-md rounded-xl px-5 py-4 z-10 border border-green-500/30 shadow-lg">
+                <div class="flex items-center gap-2 mb-1">
+                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <div class="heading-font text-lg text-white font-semibold">Plato Learning</div>
+                </div>
+                <div class="text-xs text-green-300/80">AI-driven språkundervisning</div>
             </div>
         </div>
         
         <!-- Login Form Column -->
         <div class="md:w-1/2 p-8 bg-white">
             <div>
-                <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-plato-blue mb-4 inline-block">VÄLKOMMEN TILLBAKA</span>
+                <span class="px-3 py-1 bg-green-50 rounded-full text-xs text-green-700 mb-4 inline-block">VÄLKOMMEN TILLBAKA</span>
                 <h3 class="heading-font text-2xl text-gray-800 mb-2">Logga in på Plato</h3>
                 <p class="text-gray-500 text-sm mb-8">Språkinlärningsplattformen för moderna elever</p>
                 
@@ -116,31 +178,31 @@
                             <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                 <i data-lucide="mail" class="h-4 w-4 text-gray-400"></i>
                             </div>
-                            <input type="email" class="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-plato-blue focus:ring-1 focus:ring-plato-blue transition text-sm" placeholder="din.email@skola.se" required>
+                            <input type="email" class="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition text-sm" placeholder="din.email@skola.se" required>
                         </div>
                     </div>
                     
                     <div>
                         <div class="flex justify-between items-center mb-2">
                             <label class="block text-xs font-medium text-gray-600 tracking-wide">LÖSENORD</label>
-                            <a href="#" class="text-xs text-plato-blue hover:text-plato-dark">Glömt lösenord?</a>
+                            <a href="#" class="text-xs text-green-600 hover:text-green-700">Glömt lösenord?</a>
                         </div>
                         <div class="relative">
                             <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                 <i data-lucide="lock" class="h-4 w-4 text-gray-400"></i>
                             </div>
-                            <input type="password" class="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-plato-blue focus:ring-1 focus:ring-plato-blue transition text-sm" placeholder="••••••••" required>
+                            <input type="password" class="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition text-sm" placeholder="••••••••" required>
                         </div>
                     </div>
                     
                     <div class="flex items-center">
-                        <input type="checkbox" id="remember" class="w-4 h-4 bg-gray-50 border border-gray-300 rounded text-plato-blue focus:ring-plato-blue">
+                        <input type="checkbox" id="remember" class="w-4 h-4 bg-gray-50 border border-gray-300 rounded text-green-600 focus:ring-green-500">
                         <label for="remember" class="ml-3 text-sm text-gray-600">
                             Kom ihåg mig i 30 dagar
                         </label>
                     </div>
                     
-                    <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white rounded-lg transition heading-font text-sm flex items-center justify-center transform hover:scale-105 shadow-lg">
+                    <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white rounded-lg transition heading-font text-sm flex items-center justify-center transform hover:scale-105 shadow-lg">
                         Logga in
                         <i data-lucide="arrow-right" class="h-4 w-4 ml-2"></i>
                     </button>
@@ -149,7 +211,7 @@
                 <div class="mt-6 pt-6 border-t border-gray-200 text-center">
                     <p class="text-sm text-gray-500">
                         Har du inget konto? 
-                        <a href="#" class="text-plato-blue hover:text-plato-dark font-medium transition">Registrera dig</a>
+                        <a href="#" class="text-green-600 hover:text-green-700 font-medium transition">Registrera dig</a>
                     </p>
                 </div>
                 
@@ -178,11 +240,12 @@
             </div>
         </div>
     </div>
+    </div>
 
     <!-- Loading Overlay -->
     <div class="loading-overlay fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50" id="loadingOverlay">
         <div class="bg-white rounded-lg p-6 flex items-center space-x-4">
-            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-plato-blue"></div>
+            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-green-600"></div>
             <span class="text-gray-700">Loggar in...</span>
         </div>
     </div>
@@ -243,6 +306,71 @@
                 'stroke-width': '1.5'
             }
         });
+
+        // Animate the Plato philosopher logo (login version)
+        const animatePlatoLogoLogin = () => {
+            if (window.gsap) {
+                const logoTimeline = gsap.timeline({repeat: -1, repeatDelay: 4});
+                
+                // Eyes blink
+                logoTimeline.to('.plato-eye-left-login, .plato-eye-right-login', {
+                    scaleY: 0.1,
+                    duration: 0.1,
+                    ease: 'power1.inOut',
+                    yoyo: true,
+                    repeat: 1
+                }, 1);
+                
+                // Slight head tilt
+                logoTimeline.to('.plato-head-login', {
+                    rotation: 3,
+                    transformOrigin: 'center bottom',
+                    duration: 1,
+                    ease: 'power1.inOut',
+                    yoyo: true,
+                    repeat: 1
+                }, 2);
+                
+                // Mouth movement - thinking
+                logoTimeline.to('.plato-mouth-login', {
+                    attr: {d: 'M42 52 C46 53, 54 53, 58 52'},
+                    duration: 0.8,
+                    ease: 'power1.inOut',
+                    yoyo: true,
+                    repeat: 1
+                }, 3);
+                
+                // Laurel wreath slight movement
+                logoTimeline.to('.plato-laurel-1-login, .plato-laurel-2-login', {
+                    rotation: 5,
+                    transformOrigin: 'center center',
+                    duration: 1.5,
+                    ease: 'sine.inOut',
+                    yoyo: true,
+                    repeat: 1
+                }, 3.5);
+                
+                // Beard slight movement
+                logoTimeline.to('.plato-beard-login', {
+                    attr: {d: 'M33 50 C40 63, 60 63, 67 50 L67 65 C60 76, 40 76, 33 65 Z'},
+                    duration: 1.5,
+                    ease: 'power1.inOut',
+                    yoyo: true,
+                    repeat: 1
+                }, 2.5);
+                
+                // Subtle glow effect
+                logoTimeline.to('#plato-philosopher-login svg', {
+                    filter: 'drop-shadow(0 0 4px rgba(255, 255, 255, 0.6))',
+                    duration: 2,
+                    ease: 'sine.inOut',
+                    yoyo: true,
+                    repeat: 1
+                }, 0);
+            }
+        };
+        
+        animatePlatoLogoLogin();
         
         // Form handling
         document.getElementById('loginForm').addEventListener('submit', function(e) {
